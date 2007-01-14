@@ -62,17 +62,20 @@ cut(@deck)
   onto the end. The function returns the new array.
 
 deal($cards_per_hand, $number_of_hands, @deck)
-  This function takes three arguments. The first specifies how many
-  cards will be in each hand dealt. The second specifies how many
-  hands there will be. The third is a card array, such as the one
-  created by create(), from which the cards are being dealt. The
-  function returns a new array, with the first $cards_per_hand cards
-  the cards for the first hand, the second $cards_per_hand cards for
-  the second hand, etc. Note that the function does not just take the
-  first $cards_per_hand cards from @deck and make them the first deck,
-  it deals like a dealer does and gives the first $number_of_hands
-  cards to each hand, then the next $number_of_hands cards to each
-  hand, etc.
+  This function takes
+  three arguments. The first specifies how many cards will be in each
+  hand dealt. The second specifies how many hands there will be. The
+  third is a card array, such as the one created by create(), from
+  which the cards are being dealt. The function returns a new array,
+  with the first $cards_per_hand cards the cards for the first hand,
+  the second $cards_per_hand cards for the second hand, etc as well as
+  the old deck minus those new cards. Note that the function does not
+  just take the first $cards_per_hand cards from @deck and make them
+  the first deck, it deals like a dealer does and gives the first
+  $number_of_hands cards to each hand, then the next $number_of_hands
+  cards to each hand, etc. In order to extract the deck, simply take
+  the element after the first $cards_per_hand * $number_of_hands
+  elements.
 
 humanize($card)
   This function takes just one argument, a card array element, such as

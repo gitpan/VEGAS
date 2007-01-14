@@ -94,7 +94,9 @@ sub deal
 		}
 	}
 
-	return @to_deal;
+	splice(@deck, 0, $cards_per_hand * $number_of_hands);
+
+	return (@to_deal, @deck);
 }
 
 
